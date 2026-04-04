@@ -1,9 +1,7 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
-import SubpageCard from "@/components/SubpageCard";
-import worshipImg from "@/assets/worship-stock.jpg";
-import weddingImg from "@/assets/baptisms-weddings-stock.jpg";
+import worshipImg from "@/assets/worship-hero.jpg";
 
 export default function Worship() {
   return (
@@ -59,20 +57,60 @@ export default function Worship() {
       </section>
 
       <section className="py-16 md:py-24 bg-secondary">
-        <div className="container">
+        <div className="container max-w-3xl">
           <ScrollReveal>
-            <h2 className="font-serif text-3xl font-semibold mb-8 text-center">More About Worship</h2>
+            <h2 className="font-serif text-3xl font-semibold mb-6">What to Expect</h2>
+            <div className="prose prose-lg max-w-none text-muted-foreground">
+              <p>
+                St Mary's is a Church of England parish in the Anglo-Catholic tradition within the Diocese of Southwark. Our worship centres on the Eucharist.
+              </p>
+              <p>
+                You don't need to know the order of service — just come as you are. Service booklets are provided, and someone will greet you at the door.
+              </p>
+              <p>
+                Our main service is the <strong className="text-foreground">Parish Eucharist on Sundays at 10am</strong>. It typically lasts about an hour. After the service, everyone is welcome to stay for teas, coffees, and conversation.
+              </p>
+            </div>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <ScrollReveal>
-              <SubpageCard
-                title="Baptisms, Weddings & Funerals"
-                synopsis="St Mary's is a beautiful and historic setting for life's most important moments."
-                imageSrc={weddingImg}
-                href="/worship/baptisms-weddings-funerals"
-              />
-            </ScrollReveal>
-          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24">
+        <div className="container max-w-3xl">
+          <ScrollReveal>
+            <h2 className="font-serif text-3xl font-semibold mb-6">Baptisms, Weddings &amp; Funerals</h2>
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-serif text-xl font-semibold mb-3">Baptisms</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Baptisms at St Mary's are usually for people resident in the parish, but we recognise that for many people St Mary's is a spiritual home. You are most welcome.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-serif text-xl font-semibold mb-3">Weddings</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  St Mary's is a beautiful and historic setting for a wedding. Available if you live in the parish, are a regular worshipper, or have an appropriate connection with the church.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-serif text-xl font-semibold mb-3">Funerals</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Funerals may be arranged through your undertaker, who will contact Fr Mark on behalf of the family.
+                </p>
+              </div>
+
+              <div className="bg-secondary rounded-lg p-6">
+                <p className="text-foreground font-medium">
+                  Contact: Fr Mark Nicholls — 07909 546 659 /{" "}
+                  <a href="mailto:mmarini2001@aol.com" className="text-accent hover:underline">
+                    mmarini2001@aol.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </Layout>
