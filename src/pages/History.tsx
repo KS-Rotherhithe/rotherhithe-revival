@@ -5,6 +5,10 @@ import SubpageCard from "@/components/SubpageCard";
 
 const SHIPPING_IMG = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/shipping-in-the-pool-of-london.webp";
 const MAYFLOWER_IMG = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/mayflowertablet.webp";
+const LEE_BOO_IMG = "https://stmaryrotherhithe.com/wp-content/uploads/2008/07/prince-and-capt-wilson.webp";
+const MANOR_IMG = "https://stmaryrotherhithe.com/wp-content/uploads/2025/08/Emily-Carr-Gomm-memorial-tablet-rotherhithe.webp";
+const PARISH_IMG = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/Mediaeval-Wall-Crypt.webp";
+const SEAFARERS_IMG = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/bishops-chair.webp";
 
 export default function History() {
   return (
@@ -30,7 +34,7 @@ export default function History() {
           <ScrollReveal>
             <h2 className="font-serif text-3xl font-semibold mb-8 text-center">Explore Our Past</h2>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <ScrollReveal>
               <SubpageCard
                 title="Historic Rotherhithe"
@@ -45,6 +49,38 @@ export default function History() {
                 synopsis="In 1620, the Mayflower sailed to America from Rotherhithe. The connections established still endure 400 years later."
                 imageSrc={MAYFLOWER_IMG}
                 href="/history/the-mayflower"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <SubpageCard
+                title="Prince Lee Boo"
+                synopsis="The extraordinary story of a Pacific Island prince who came to Rotherhithe in 1784 and is buried in St Mary's churchyard."
+                imageSrc={LEE_BOO_IMG}
+                href="/history/prince-lee-boo"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <SubpageCard
+                title="The Manor of Rotherhithe"
+                synopsis="From the royal demesne to the Carr-Gomm family — the story of the manor and its generous benefactors."
+                imageSrc={MANOR_IMG}
+                href="/history/the-manor-of-rotherhithe"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={400}>
+              <SubpageCard
+                title="The Parish"
+                synopsis="Over 700 years of parish history — medieval origins, the 1714 rebuild, Victorian restoration, and notable memorials."
+                imageSrc={PARISH_IMG}
+                href="/history/the-parish"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={500}>
+              <SubpageCard
+                title="Seafarers & Maritime Heritage"
+                synopsis="Shipbuilding, the Greenland Dock, and the Fighting Temeraire — Rotherhithe's deep connection with the sea."
+                imageSrc={SEAFARERS_IMG}
+                href="/history/seafarers-maritime-heritage"
               />
             </ScrollReveal>
           </div>

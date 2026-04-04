@@ -10,12 +10,14 @@ import History from "./pages/History";
 import Community from "./pages/Community";
 import SupportUs from "./pages/SupportUs";
 import Contact from "./pages/Contact";
-import BaptismsWeddingsFunerals from "./pages/BaptismsWeddingsFunerals";
 import ChurchInterior from "./pages/ChurchInterior";
 import TheOrgan from "./pages/TheOrgan";
 import HistoricRotherhithe from "./pages/HistoricRotherhithe";
 import TheMayflower from "./pages/TheMayflower";
-import Donate from "./pages/Donate";
+import PrinceLeeBoo from "./pages/PrinceLeeBoo";
+import ManorOfRotherhithe from "./pages/ManorOfRotherhithe";
+import TheParish from "./pages/TheParish";
+import SeafarersMaritimeHeritage from "./pages/SeafarersMaritimeHeritage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,16 +31,18 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/worship" element={<Worship />} />
-          <Route path="/worship/baptisms-weddings-funerals" element={<BaptismsWeddingsFunerals />} />
           <Route path="/visit" element={<Visit />} />
           <Route path="/visit/the-church-interior" element={<ChurchInterior />} />
           <Route path="/visit/the-organ" element={<TheOrgan />} />
           <Route path="/history" element={<History />} />
           <Route path="/history/historic-rotherhithe" element={<HistoricRotherhithe />} />
           <Route path="/history/the-mayflower" element={<TheMayflower />} />
+          <Route path="/history/prince-lee-boo" element={<PrinceLeeBoo />} />
+          <Route path="/history/the-manor-of-rotherhithe" element={<ManorOfRotherhithe />} />
+          <Route path="/history/the-parish" element={<TheParish />} />
+          <Route path="/history/seafarers-maritime-heritage" element={<SeafarersMaritimeHeritage />} />
           <Route path="/community" element={<Community />} />
           <Route path="/support-us" element={<SupportUs />} />
-          <Route path="/support-us/donate" element={<Donate />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
