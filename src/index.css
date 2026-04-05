@@ -61,6 +61,14 @@
     font-family: 'Playfair Display', Georgia, serif;
     @apply tracking-tight;
   }
+
+  p, td, th, li, blockquote, label, span, a {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+  }
+
+  .prose p, .prose li, .prose blockquote {
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+  }
 }
 
 @layer utilities {

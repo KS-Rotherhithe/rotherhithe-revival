@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
-import worshipImg from "@/assets/worship-hero.jpg";
+import worshipImg from "@/assets/worship-hero.jpeg";
 
 export default function Worship() {
   return (
@@ -38,7 +38,7 @@ export default function Worship() {
                   </tr>
                   <tr className="border-b border-border/50">
                     <td className="py-3 pr-4">Eucharist</td>
-                    <td className="py-3 pr-4">Tue, Wed &amp; Thu</td>
+                    <td className="py-3 pr-4">Tue &amp; Thu</td>
                     <td className="py-3">12:00 noon</td>
                   </tr>
                   <tr>
