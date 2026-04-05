@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import Worship from "./pages/Worship";
 import Visit from "./pages/Visit";
 import History from "./pages/History";
-import Community from "./pages/Community";
+
 import SupportUs from "./pages/SupportUs";
 import Contact from "./pages/Contact";
 import ChurchInterior from "./pages/ChurchInterior";
@@ -41,7 +41,7 @@ const App = () => (
           <Route path="/history/the-manor-of-rotherhithe" element={<ManorOfRotherhithe />} />
           <Route path="/history/the-parish" element={<TheParish />} />
           <Route path="/history/seafarers-maritime-heritage" element={<SeafarersMaritimeHeritage />} />
-          <Route path="/community" element={<Community />} />
+          
           <Route path="/support-us" element={<SupportUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

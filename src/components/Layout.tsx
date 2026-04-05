@@ -7,7 +7,6 @@ const navItems = [
   { label: "Worship", path: "/worship" },
   { label: "Visit", path: "/visit" },
   { label: "History", path: "/history" },
-  { label: "Community", path: "/community" },
   { label: "Support Us", path: "/support-us" },
   { label: "Contact", path: "/contact" },
 ];

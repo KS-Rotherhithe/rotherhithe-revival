@@ -3,11 +3,11 @@ import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import ScrollReveal from "@/components/ScrollReveal";
 import SubpageCard from "@/components/SubpageCard";
-import worshipImg from "@/assets/worship-stock.jpg";
-import communityImg from "@/assets/community-stock.jpg";
-import supportImg from "@/assets/support-stock.jpg";
+import homeHeroImg from "@/assets/home-hero.png";
+import homeJoinusImg from "@/assets/home-joinus.png";
+import worshipTileImg from "@/assets/worship-hero.jpeg";
+import supportImg from "@/assets/support-choir.webp";
 
-const CHURCH_EXTERIOR = "https://stmaryrotherhithe.com/wp-content/uploads/2025/08/stmarys-2017.webp";
 const RECTOR_PHOTO = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/20180124_114315-1.webp";
 
 export default function Index() {
@@ -16,7 +16,7 @@ export default function Index() {
       {/* Hero */}
       <section className="relative h-[85vh] min-h-[540px] flex items-center overflow-hidden">
         <img
-          src={CHURCH_EXTERIOR}
+          src={homeHeroImg}
           alt="St Mary's Church, Rotherhithe"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -92,7 +92,7 @@ export default function Index() {
                       </tr>
                       <tr className="border-b border-border/50">
                         <td className="py-3 pr-4">Eucharist</td>
-                        <td className="py-3 pr-4">Tue, Wed &amp; Thu</td>
+                        <td className="py-3 pr-4">Tue &amp; Thu</td>
                         <td className="py-3">12:00 noon</td>
                       </tr>
                       <tr>
@@ -109,8 +109,8 @@ export default function Index() {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img
-                  src={worshipImg}
-                  alt="Worship at St Mary's"
+                  src={homeJoinusImg}
+                  alt="Interior of St Mary's Church"
                   className="w-full h-full object-cover aspect-[4/3]"
                 />
               </div>
@@ -151,24 +151,16 @@ export default function Index() {
               Explore St Mary's
             </h2>
           </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <ScrollReveal delay={0}>
               <SubpageCard
                 title="Worship With Us"
                 synopsis="Sunday Parish Eucharist at 10am. Weekday services throughout the week. All are welcome."
-                imageSrc={worshipImg}
+                imageSrc={worshipTileImg}
                 href="/worship"
               />
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <SubpageCard
-                title="Our Community"
-                synopsis="St Mary's is at the heart of the Rotherhithe community. Baptisms, weddings, funerals and parish life."
-                imageSrc={communityImg}
-                href="/community"
-              />
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
               <SubpageCard
                 title="Support St Mary's"
                 synopsis="Help us maintain this Grade I listed church for future generations through donations and volunteering."
