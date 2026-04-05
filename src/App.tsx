@@ -18,6 +18,9 @@ import PrinceLeeBoo from "./pages/PrinceLeeBoo";
 import ManorOfRotherhithe from "./pages/ManorOfRotherhithe";
 import TheParish from "./pages/TheParish";
 import SeafarersMaritimeHeritage from "./pages/SeafarersMaritimeHeritage";
+import Community from "./pages/Community";
+import Safeguarding from "./pages/Safeguarding";
+import CommunityLinks from "./pages/CommunityLinks";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +45,9 @@ const App = () => (
           <Route path="/history/the-parish" element={<TheParish />} />
           <Route path="/history/seafarers-maritime-heritage" element={<SeafarersMaritimeHeritage />} />
           
+          <Route path="/community" element={<Community />} />
+          <Route path="/community/safeguarding" element={<Safeguarding />} />
+          <Route path="/community/community-links" element={<CommunityLinks />} />
           <Route path="/support-us" element={<SupportUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
