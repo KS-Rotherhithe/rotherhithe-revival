@@ -165,6 +165,22 @@ export default function Index() {
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <SubpageCard
+                title="History"
+                synopsis="Discover over 1,000 years of history — from the Mayflower to the maritime heritage of Rotherhithe."
+                imageSrc={HISTORY_IMG}
+                href="/history"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <SubpageCard
+                title="Community"
+                synopsis="Events, concerts, recitals, and community gatherings throughout the year."
+                imageSrc={communityHeroImg}
+                href="/community"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <SubpageCard
                 title="Support St Mary's"
                 synopsis="Help us maintain this Grade I listed church for future generations through donations and volunteering."
                 imageSrc={supportImg}
