@@ -7,6 +7,9 @@ import homeHeroImg from "@/assets/home-hero.png";
 import homeJoinusImg from "@/assets/home-joinus.png";
 import worshipTileImg from "@/assets/worship-hero.jpeg";
 import supportImg from "@/assets/support-choir.webp";
+import communityHeroImg from "@/assets/community-hero.webp";
+
+const HISTORY_IMG = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/shipping-in-the-pool-of-london.webp";
 
 const RECTOR_PHOTO = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/20180124_114315-1.webp";
 
@@ -161,6 +164,22 @@ export default function Index() {
               />
             </ScrollReveal>
             <ScrollReveal delay={100}>
+              <SubpageCard
+                title="History"
+                synopsis="Discover over 1,000 years of history — from the Mayflower to the maritime heritage of Rotherhithe."
+                imageSrc={HISTORY_IMG}
+                href="/history"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <SubpageCard
+                title="Community"
+                synopsis="Events, concerts, recitals, and community gatherings throughout the year."
+                imageSrc={communityHeroImg}
+                href="/community"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={300}>
               <SubpageCard
                 title="Support St Mary's"
                 synopsis="Help us maintain this Grade I listed church for future generations through donations and volunteering."
