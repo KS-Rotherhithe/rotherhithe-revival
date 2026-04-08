@@ -7,6 +7,9 @@ import homeHeroImg from "@/assets/home-hero.png";
 import homeJoinusImg from "@/assets/home-joinus.png";
 import worshipTileImg from "@/assets/worship-hero.jpeg";
 import supportImg from "@/assets/support-choir.webp";
+import communityHeroImg from "@/assets/community-hero.webp";
+
+const HISTORY_IMG = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/shipping-in-the-pool-of-london.webp";
 
 const RECTOR_PHOTO = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/20180124_114315-1.webp";
 
