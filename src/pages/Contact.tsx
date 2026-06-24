@@ -45,7 +45,7 @@ export default function Contact() {
                 <div className="text-muted-foreground">
                   <p className="mb-4">
                     <strong className="text-foreground">St Mary's Church</strong><br />
-                    Saint Marychurch St<br />
+                    St Marychurch Street<br />
                     London SE16 4HZ
                   </p>
                   <p>
@@ -64,7 +64,7 @@ export default function Contact() {
             <h2 className="font-serif text-2xl font-semibold mb-6 text-center">Our Location</h2>
             <div className="max-w-4xl mx-auto rounded-lg overflow-hidden shadow-md">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1242.1!2d-0.05177!3d51.50106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876035c9b1c53f7%3A0x4b6e57d38e7b3b0a!2sSt+Mary&#39;s+Church%2C+St+Marychurch+St%2C+London+SE16+4JE!5e0!3m2!1sen!2suk!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1242.1!2d-0.05177!3d51.50106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876035c9b1c53f7%3A0x4b6e57d38e7b3b0a!2sSt+Mary&#39;s+Church%2C+St+Marychurch+Street%2C+London+SE16+4HZ!5e0!3m2!1sen!2suk!4v1700000000000"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}

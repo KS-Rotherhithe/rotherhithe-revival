@@ -78,10 +78,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container py-12">
           <div className="grid gap-8 md:grid-cols-3">
             <div>
-              <h3 className="font-serif text-lg font-semibold mb-3">St Mary the Virgin</h3>
-              <p className="text-sm opacity-80 leading-relaxed">
-                A living parish church on the banks of the Thames — worshipping on this site for over 1,000 years.
-              </p>
+              <Link to="/community/safeguarding" className="font-serif text-lg font-semibold mb-3 hover:underline block">
+                Safeguarding
+              </Link>
+              <Link to="/community/safeguarding" className="text-sm opacity-80 leading-relaxed hover:underline block">
+                Click here for safeguarding instructions
+              </Link>
             </div>
             <div>
               <h4 className="font-serif text-base font-semibold mb-3">Services</h4>
