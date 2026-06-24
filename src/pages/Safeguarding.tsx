@@ -35,6 +35,9 @@ export default function Safeguarding() {
               </a>{" "}
               or alternatively, if appropriate, to the Clergy or Churchwardens.
             </p>
+            <p className="text-muted-foreground leading-relaxed mt-6">
+              Otherwise, the Diocese of Southwark’s Safeguarding Adviser can be reached at 020 7939 9423 (office hours) or 07982 279 713 (out of hours). Childline phone number is 0800 1111.
+            </p>
           </ScrollReveal>
         </div>
       </section>

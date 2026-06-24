@@ -45,7 +45,7 @@ export default function Contact() {
                 <div className="text-muted-foreground">
                   <p className="mb-4">
                     <strong className="text-foreground">St Mary's Church</strong><br />
-                    Saint Marychurch St<br />
+                    St Marychurch Street<br />
                     London SE16 4HZ
                   </p>
                   <p>
