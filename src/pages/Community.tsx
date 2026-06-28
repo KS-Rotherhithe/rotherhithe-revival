@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import ScrollReveal from "@/components/ScrollReveal";
 import SubpageCard from "@/components/SubpageCard";
+import WeeklyContentSection from "@/components/WeeklyContentSection";
 import communityHeroImg from "@/assets/community-hero.webp";
 
 export default function Community() {
@@ -14,6 +15,14 @@ export default function Community() {
       />
 
       <section className="py-16 md:py-24">
+        <div className="container max-w-4xl">
+          <ScrollReveal>
+            <WeeklyContentSection id="weekly-update" showIntro={false} />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-24 bg-secondary">
         <div className="container max-w-3xl">
           <ScrollReveal>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -32,15 +41,23 @@ export default function Community() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-secondary">
+      <section className="py-16 md:py-24">
         <div className="container">
           <ScrollReveal>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground text-center mb-12">
               Explore
             </h2>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <ScrollReveal delay={0}>
+              <SubpageCard
+                title="Pew Sheets"
+                synopsis="View and download this week's pew sheet — updated every Saturday."
+                imageSrc={communityHeroImg}
+                href="/community/pew-sheets"
+              />
+            </ScrollReveal>
+            <ScrollReveal delay={100}>
               <SubpageCard
                 title="Safeguarding"
                 synopsis="Our commitment to safeguarding children, young people, and vulnerable adults."
@@ -48,7 +65,7 @@ export default function Community() {
                 href="/community/safeguarding"
               />
             </ScrollReveal>
-            <ScrollReveal delay={100}>
+            <ScrollReveal delay={200}>
               <SubpageCard
                 title="Community Links"
                 synopsis="Useful links to our diocese, local organisations, and community partners."

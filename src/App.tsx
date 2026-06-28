@@ -21,6 +21,7 @@ import SeafarersMaritimeHeritage from "./pages/SeafarersMaritimeHeritage";
 import Community from "./pages/Community";
 import Safeguarding from "./pages/Safeguarding";
 import CommunityLinks from "./pages/CommunityLinks";
+import PewSheets from "./pages/PewSheets";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/history/seafarers-maritime-heritage" element={<SeafarersMaritimeHeritage />} />
           
           <Route path="/community" element={<Community />} />
+          <Route path="/community/pew-sheets" element={<PewSheets />} />
           <Route path="/community/safeguarding" element={<Safeguarding />} />
           <Route path="/community/community-links" element={<CommunityLinks />} />
           <Route path="/support-us" element={<SupportUs />} />
