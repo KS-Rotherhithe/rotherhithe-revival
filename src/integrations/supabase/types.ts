@@ -14,7 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      weekly_content: {
+        Row: {
+          created_at: string
+          drive_file_id: string | null
+          file_name: string
+          file_type: string
+          file_url: string
+          id: string
+          published_at: string
+          week_label: string | null
+        }
+        Insert: {
+          created_at?: string
+          drive_file_id?: string | null
+          file_name: string
+          file_type: string
+          file_url: string
+          id?: string
+          published_at?: string
+          week_label?: string | null
+        }
+        Update: {
+          created_at?: string
+          drive_file_id?: string | null
+          file_name?: string
+          file_type?: string
+          file_url?: string
+          id?: string
+          published_at?: string
+          week_label?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
