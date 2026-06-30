@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Facebook, Instagram, Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -11,6 +11,19 @@ const navItems = [
   { label: "Support Us", path: "/support-us" },
   { label: "Contact", path: "/contact" },
 ];
+
+const SOCIAL_LINKS = [
+  {
+    label: "Facebook",
+    href: "https://facebook.com/StMaryRotherhithe",
+    icon: Facebook,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/stmaryrotherhithe/",
+    icon: Instagram,
+  },
+] as const;
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -102,6 +115,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   hello@stmaryrotherhithe.com
                 </a>
               </p>
+              <div className="mt-4 flex items-center gap-3">
+                {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`St Mary's Rotherhithe on ${label}`}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-foreground/25 text-primary-foreground opacity-80 transition-opacity hover:opacity-100"
+                  >
+                    <Icon size={18} aria-hidden />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
           <div className="mt-8 pt-6 border-t border-primary-foreground/20 text-center text-xs opacity-60">

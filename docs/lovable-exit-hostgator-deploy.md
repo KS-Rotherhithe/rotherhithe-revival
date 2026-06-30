@@ -82,6 +82,16 @@ npm run preview
    - `.htaccess` (included via `public/.htaccess` in repo)
    - `robots.txt`, etc.
 
+**Important — keep WordPress images:** Many history pages still load images from `/wp-content/uploads/...`. After removing WordPress, restore that folder from your backup:
+
+```
+public_html/wp-content/uploads/   ← restore from WordPress backup zip
+```
+
+Without this, history/interior pages show broken images (Apache serves `index.html` instead).
+
+5. Upload contents of local `dist/`
+
 ### Via FTP (FileZilla, etc.)
 
 - Host: your domain or FTP hostname from cPanel
@@ -167,6 +177,7 @@ npm install
 | Blank page after upload | Ensure `index.html` is in `public_html` root, not nested in `dist/` |
 | `/community/pew-sheets` 404 on refresh | Add/fix `.htaccess` |
 | Pew sheet empty | Check `.env` values; rebuild; verify Supabase row + public Storage URL |
+| History images broken | Restore `public_html/wp-content/uploads/` from WordPress backup |
 | Old WordPress still shows | Clear browser cache; confirm files in correct `public_html` |
 | Build fails | Run `npm install`; check Node version (18+ recommended) |
 

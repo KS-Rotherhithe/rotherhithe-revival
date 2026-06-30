@@ -19,7 +19,9 @@ Drag and drop your file into this folder. No website login needed.
 - **By Friday night** — so it goes live Saturday morning
 - If you upload on Thursday (as usual), that works perfectly
 
-## File naming (recommended)
+## File naming (required)
+
+The filename **must include the word `pewsheet`** (lowercase).
 
 ```
 pewsheet-2026-07-06.pdf
@@ -27,7 +29,7 @@ pewsheet-2026-07-06.pdf
 
 Use the **Sunday date** the pew sheet applies to.
 
-If you use any filename, the system picks the **newest file** in the folder.
+Files without `pewsheet` in the name are **not found** by the automation (Drive search looks for that word).
 
 ## Accepted formats
 

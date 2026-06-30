@@ -8,15 +8,17 @@
    - Your Google account (admin)
    - n8n service account or OAuth user (read access)
 
-## 2. Naming convention
+## 2. Naming convention (required)
 
-**Recommended:** `pewsheet-YYYY-MM-DD.pdf` where date = Sunday it applies to.
+Every file **must include `pewsheet` in the filename**.
+
+Format: `pewsheet-YYYY-MM-DD.pdf` where date = Sunday it applies to.
 
 Examples:
 - `pewsheet-2026-07-06.pdf`
 - `pewsheet-2026-07-13.png`
 
-**Fallback:** Any filename — n8n picks the **newest file by modified time**.
+Files without `pewsheet` in the name are not picked up by n8n.
 
 ## 3. Allowed file types
 
@@ -30,17 +32,15 @@ Max size: 10 MB (Supabase bucket limit).
 
 Upload by **Friday 11:59pm** for Saturday 11:00am publish.
 
-## 5. Folder ID for n8n
+## 5. How n8n finds files
 
-Copy from URL when folder is open:
+The workflow **searches Google Drive by filename** — it does not use a folder ID.
 
-```
-https://drive.google.com/drive/folders/1ABC...xyz
-                                      ^^^^^^^^^^^
-                                      FOLDER_ID
-```
+- Search query: `pewsheet`
+- Only files whose name contains `pewsheet` are returned
+- See [n8n-setup.md](n8n-setup.md) for node settings
 
-Set as `GOOGLE_DRIVE_FOLDER_ID` in n8n.
+The shared folder is still useful for Fr Mark (one clear place to upload), but n8n discovers files by name across the connected Drive account.
 
 ## 6. Share admin guide
 
