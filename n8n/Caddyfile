@@ -1,0 +1,4 @@
+# Use your real subdomain (must match DNS A record and .env N8N_HOST)
+n8n.stmaryrotherhithe.com {
+	reverse_proxy n8n:5678
+}

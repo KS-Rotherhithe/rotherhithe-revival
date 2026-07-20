@@ -1,0 +1,35 @@
+# n8n only — use with Nginx on the VPS host (not Caddy)
+# Copy to ~/n8n/docker-compose.yml on the VPS
+# Requires: .env (see .env.example) + Nginx site config (see nginx-n8n.conf.example)
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    restart: always
+    ports:
+      - "127.0.0.1:5678:5678"
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    environment:
+      - GENERIC_TIMEZONE=Europe/London
+      - TZ=Europe/London
+      - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
+      - N8N_DISABLE_IPV6=true
+      - NODE_OPTIONS=--dns-result-order=ipv4first
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=https://${N8N_HOST}/
+      - N8N_PROXY_HOPS=1
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+      - SUPABASE_URL=${SUPABASE_URL}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_EMAIL_CC=${ADMIN_EMAIL_CC}
+    volumes:
+      - n8n_data:/home/node/.n8n
+
+volumes:
+  n8n_data:

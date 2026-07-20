@@ -1,5 +1,7 @@
 # n8n workflow setup
 
+**Self-hosting:** To move off paid n8n Cloud, see [n8n-self-host-vps.md](n8n-self-host-vps.md).
+
 ## Import
 
 1. Open n8n
@@ -14,19 +16,26 @@
 | Supabase HTTP nodes | Manual headers: `apikey` + `Authorization: Bearer {SERVICE_ROLE_KEY}` |
 | Email — Success / Error | Your existing email node (Gmail, SMTP, etc.) |
 
-## Workflow variables (not server env vars)
+## Workflow config: Variables vs environment
 
-Set in n8n **Settings → Variables** (left sidebar). Code nodes use **`$vars`**, not `$env`.
+| Hosting | How to set `SUPABASE_URL`, `ADMIN_EMAIL` |
+|---------|---------------------------------------------|
+| **n8n Cloud (paid)** | Settings → Variables → use `$vars.NAME` |
+| **Self-hosted Community Edition** | **No UI Variables** — add to VPS `.env` + `docker-compose.yml`; use `$env.NAME` |
 
-| Variable | Example |
-|----------|---------|
-| `SUPABASE_URL` | `https://xxxxx.supabase.co` |
-| `ADMIN_EMAIL` | `hello@stmaryrotherhithe.com` |
-| `ADMIN_EMAIL_CC` | Your email for alerts |
+Self-hosted `.env` on the VPS (see `n8n/.env.example`):
 
-**Do not use `$env` in Code nodes** — n8n 2.0 blocks it and you get `access to env vars denied`.
+```
+SUPABASE_URL=https://xxxxx.supabase.co
+ADMIN_EMAIL=hello@stmaryrotherhithe.com
+ADMIN_EMAIL_CC=your@email.com
+```
 
-Supabase auth keys go in the **HTTP Request credential headers**, not as variables.
+Requires `N8N_BLOCK_ENV_ACCESS_IN_NODE=false` in docker-compose (included in repo).
+
+Re-import `n8n/stmary-weekly-pewsheet-publish.json` after switching to CE — it uses `$env`, not `$vars`.
+
+Supabase auth keys go in the **HTTP Request credential headers**, not as env vars.
 
 ## Email notifications (optional)
 
@@ -75,12 +84,12 @@ On **Email Success** and **Email Error — No File**:
 | Field | Value |
 |-------|-------|
 | Credential | Your SMTP credential |
-| From Email | `={{ $vars.ADMIN_EMAIL }}` |
-| To Email | `={{ $vars.ADMIN_EMAIL }}` |
+| From Email | `={{ $env.ADMIN_EMAIL }}` (CE) or `$vars` (Cloud) |
+| To Email | `={{ $env.ADMIN_EMAIL }}` |
 | Email Format | Text |
 | Body field | **Text** (not "Message") |
 
-CC (optional): Options → CC Email → `={{ $vars.ADMIN_EMAIL_CC }}`
+CC (optional): Options → CC Email → `={{ $env.ADMIN_EMAIL_CC }}`
 
 ### 5. If email still fails
 
@@ -134,7 +143,7 @@ The date in the name (Sunday the pew sheet applies to) also sets the **week labe
 | Setting | Value |
 |---------|-------|
 | Method | POST |
-| URL | `={{ $vars.SUPABASE_URL }}/storage/v1/object/weekly-content/{{ $('Skip If Already Published').first().json.storage_path }}` |
+| URL | `={{ $env.SUPABASE_URL }}/storage/v1/object/weekly-content/...` |
 | Send Body | On |
 | Body Content Type | **n8n Binary File** |
 | Input Data Field Name | `data` (must match Download node's binary key — check its output) |
@@ -163,7 +172,9 @@ After a successful upload, output should include `"Key": "weekly-content/current
 
 | Symptom | Likely cause |
 |---------|----------------|
-| `access to env vars denied` in Code node | Use `$vars.SUPABASE_URL` not `$env`; set variable in Settings → Variables |
+| `access to env vars denied` in Code node | Set `N8N_BLOCK_ENV_ACCESS_IN_NODE=false` in docker-compose; add vars to VPS `.env` |
+| `getaddrinfo EAI_AGAIN` on credentials | VPS DNS issue — add `dns: 8.8.8.8` to docker-compose and restart |
+| Variables menu says Enterprise only | Normal on CE — use `.env` + `$env` instead of UI Variables |
 | List Drive Files returns no data | Filename missing `pewsheet`, or Search Query not set to `pewsheet` |
 | Pick Newest Valid File errors | File is Word/Google Doc — must be PDF, JPEG, or PNG |
 | DB row exists but no file in Storage | Re-ran only **Build DB Payload** / **Insert DB Row** without **Upload**; run full workflow |

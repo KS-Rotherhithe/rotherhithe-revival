@@ -85,7 +85,7 @@
     {
       "parameters": {
         "method": "GET",
-        "url": "={{ $vars.SUPABASE_URL }}/rest/v1/weekly_content?select=drive_file_id&order=published_at.desc&limit=1",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/weekly_content?select=drive_file_id&order=published_at.desc&limit=1",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "options": {}
@@ -168,7 +168,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "={{ $vars.SUPABASE_URL }}/storage/v1/object/weekly-content/{{ $('Skip If Already Published').first().json.storage_path }}",
+        "url": "={{ $env.SUPABASE_URL }}/storage/v1/object/weekly-content/{{ $('Skip If Already Published').first().json.storage_path }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
@@ -204,7 +204,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const meta = $('Skip If Already Published').first().json;\nconst publicUrl = `${$vars.SUPABASE_URL}/storage/v1/object/public/weekly-content/${meta.storage_path}`;\n\n// Derive week label from filename pewsheet-YYYY-MM-DD or use published date\nlet weekLabel = null;\nconst match = meta.file_name.match(/pewsheet-(\\d{4})-(\\d{2})-(\\d{2})/i);\nif (match) {\n  const d = new Date(`${match[1]}-${match[2]}-${match[3]}T12:00:00`);\n  weekLabel = `Sunday ${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`;\n}\n\nreturn [{\n  json: {\n    file_url: publicUrl,\n    file_type: meta.file_type,\n    file_name: meta.file_name,\n    drive_file_id: meta.drive_file_id,\n    week_label: weekLabel,\n    published_at: new Date().toISOString()\n  }\n}];"
+        "jsCode": "const meta = $('Skip If Already Published').first().json;\nconst publicUrl = `${$env.SUPABASE_URL}/storage/v1/object/public/weekly-content/${meta.storage_path}`;\n\n// Derive week label from filename pewsheet-YYYY-MM-DD or use published date\nlet weekLabel = null;\nconst match = meta.file_name.match(/pewsheet-(\\d{4})-(\\d{2})-(\\d{2})/i);\nif (match) {\n  const d = new Date(`${match[1]}-${match[2]}-${match[3]}T12:00:00`);\n  weekLabel = `Sunday ${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}`;\n}\n\nreturn [{\n  json: {\n    file_url: publicUrl,\n    file_type: meta.file_type,\n    file_name: meta.file_name,\n    drive_file_id: meta.drive_file_id,\n    week_label: weekLabel,\n    published_at: new Date().toISOString()\n  }\n}];"
       },
       "id": "build-db-payload",
       "name": "Build DB Payload",
@@ -215,7 +215,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "={{ $vars.SUPABASE_URL }}/rest/v1/weekly_content",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/weekly_content",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
@@ -250,13 +250,13 @@
     },
     {
       "parameters": {
-        "fromEmail": "={{ $vars.ADMIN_EMAIL }}",
-        "toEmail": "={{ $vars.ADMIN_EMAIL }}",
+        "fromEmail": "={{ $env.ADMIN_EMAIL }}",
+        "toEmail": "={{ $env.ADMIN_EMAIL }}",
         "subject": "St Mary's — Pew sheet published successfully",
         "emailFormat": "text",
         "text": "=The weekly pew sheet was published at {{ $now.format('yyyy-MM-dd HH:mm') }}.\n\nFile: {{ $('Build DB Payload').first().json.file_name }}\nURL: {{ $('Build DB Payload').first().json.file_url }}\n\nView on site: Community → Pew Sheets",
         "options": {
-          "ccEmail": "={{ $vars.ADMIN_EMAIL_CC || '' }}"
+          "ccEmail": "={{ $env.ADMIN_EMAIL_CC || '' }}"
         }
       },
       "id": "email-success",
@@ -275,13 +275,13 @@
     },
     {
       "parameters": {
-        "fromEmail": "={{ $vars.ADMIN_EMAIL }}",
-        "toEmail": "={{ $vars.ADMIN_EMAIL }}",
+        "fromEmail": "={{ $env.ADMIN_EMAIL }}",
+        "toEmail": "={{ $env.ADMIN_EMAIL }}",
         "subject": "St Mary's — Pew sheet publish FAILED",
         "emailFormat": "text",
         "text": "=The Saturday pew sheet automation failed.\n\nReason: {{ $json.message || $json.error || 'Unknown error' }}\n\nTime: {{ $now.format('yyyy-MM-dd HH:mm') }}\n\nAction: Upload a valid PDF or image to Google Drive (filename must include pewsheet) and re-run the workflow manually.\n\nPrevious week's content remains live on the website.",
         "options": {
-          "ccEmail": "={{ $vars.ADMIN_EMAIL_CC || '' }}"
+          "ccEmail": "={{ $env.ADMIN_EMAIL_CC || '' }}"
         }
       },
       "id": "email-error-no-file",
