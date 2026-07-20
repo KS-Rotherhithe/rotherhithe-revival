@@ -33,6 +33,7 @@ Create or edit **`.env`** in the repo root (same values as Supabase → Settings
 ```
 VITE_SUPABASE_URL=https://YOUR-PROJECT.supabase.co
 VITE_SUPABASE_PUBLISHABLE_KEY=sb_publishable_...or-anon-key...
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
 **Never put `service_role` / secret key here** — n8n only.

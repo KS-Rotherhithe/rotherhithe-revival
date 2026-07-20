@@ -23,6 +23,7 @@ import Safeguarding from "./pages/Safeguarding";
 import CommunityLinks from "./pages/CommunityLinks";
 import PewSheets from "./pages/PewSheets";
 import NotFound from "./pages/NotFound";
+import { Analytics } from "./components/Analytics";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Analytics />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/worship" element={<Worship />} />
