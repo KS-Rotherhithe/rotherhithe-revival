@@ -2,7 +2,8 @@ const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID?.trim();
 
 declare global {
   interface Window {
-    dataLayer?: unknown[];
+    dataLayer?: IArguments[];
+    // Must match Google's snippet shape: push(arguments), not a rest-array.
     gtag?: (...args: unknown[]) => void;
   }
 }
@@ -14,6 +15,7 @@ function sendPageView(path: string): void {
   if (!measurementId || !window.gtag) return;
 
   window.gtag("event", "page_view", {
+    send_to: measurementId,
     page_path: path,
     page_location: window.location.href,
     page_title: document.title,
@@ -31,8 +33,11 @@ export function initAnalytics(): void {
   if (!measurementId) return;
 
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag(...args: unknown[]) {
-    window.dataLayer!.push(args);
+  // Critical: Google's gtag queue expects the Arguments object, not an Array.
+  // Using (...args) => dataLayer.push(args) loads the script but sends no hits.
+  window.gtag = function gtag() {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer!.push(arguments);
   };
 
   window.gtag("js", new Date());
