@@ -12,6 +12,17 @@ export default function Worship() {
         imageSrc={worshipImg}
       />
 
+      <section className="pt-16 md:pt-24">
+        <div className="container max-w-3xl">
+          <ScrollReveal>
+            <p className="text-foreground font-medium border-l-4 border-accent pl-4">
+              Note that there is currently no Eucharist on weekdays until further notice.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/*
       <section className="py-16 md:py-24">
         <div className="container max-w-3xl">
           <ScrollReveal>
@@ -55,6 +66,7 @@ export default function Worship() {
           </ScrollReveal>
         </div>
       </section>
+      */}
 
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container max-w-3xl">
@@ -97,15 +109,15 @@ export default function Worship() {
               <div>
                 <h3 className="font-serif text-xl font-semibold mb-3">Funerals</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Funerals may be arranged through your undertaker, who will contact Fr Mark on behalf of the family.
+                  Funerals may be arranged through your undertaker, who will contact us on behalf of the family.
                 </p>
               </div>
 
               <div className="bg-secondary rounded-lg p-6">
                 <p className="text-foreground font-medium">
-                  Contact: Fr Mark Nicholls — 07909 546 659 /{" "}
-                  <a href="mailto:mmarini2001@aol.com" className="text-accent hover:underline">
-                    mmarini2001@aol.com
+                  Contact: Churchwarden Ms Karyna Silina —{" "}
+                  <a href="mailto:hello@stmaryrotherhithe.com" className="text-accent hover:underline">
+                    hello@stmaryrotherhithe.com
                   </a>
                 </p>
               </div>

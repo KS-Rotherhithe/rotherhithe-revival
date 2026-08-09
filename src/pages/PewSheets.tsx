@@ -16,7 +16,7 @@ export default function PewSheets() {
       <section className="py-16 md:py-24">
         <div className="container max-w-4xl">
           <ScrollReveal>
-            <WeeklyContentSection id="pew-sheets" showIntro />
+            <WeeklyContentSection id="pew-sheets" showIntro showArchiveLink />
           </ScrollReveal>
         </div>
       </section>

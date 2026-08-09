@@ -21,17 +21,18 @@ export default function Contact() {
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     <strong className="text-foreground">Phone:</strong><br />
-                    07909 546 659
+                    07812 757 450
                   </p>
                   <p>
                     <strong className="text-foreground">Email:</strong><br />
                     <a href="mailto:hello@stmaryrotherhithe.com" className="text-accent hover:underline">
                       hello@stmaryrotherhithe.com
                     </a>
-                    <br />
-                    <a href="mailto:mmarini2001@aol.com" className="text-accent hover:underline">
-                      mmarini2001@aol.com
-                    </a>
+                  </p>
+                  <p>
+                    <strong className="text-foreground">Churchwardens:</strong><br />
+                    Christine Tejero<br />
+                    Karyna Silina
                   </p>
                   <p>
                     <strong className="text-foreground">Rector:</strong><br />

@@ -102,15 +102,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="font-serif text-base font-semibold mb-3">Services</h4>
               <p className="text-sm opacity-80 leading-relaxed">
                 Parish Eucharist — Sundays at 10:00am<br />
-                Evening Prayer — Sundays at 6:00pm<br />
-                Weekday Eucharist — see schedule
+                Evening Prayer — Sundays at 6:00pm
+                {/* <br />
+                Weekday Eucharist — see schedule */}
               </p>
             </div>
             <div>
               <h4 className="font-serif text-base font-semibold mb-3">Contact</h4>
               <p className="text-sm opacity-80 leading-relaxed">
                 Saint Marychurch St, London SE16 4HZ<br />
-                Phone: 07909 546 659<br />
+                Phone: 07812 757 450<br />
                 <a href="mailto:hello@stmaryrotherhithe.com" className="underline underline-offset-2 hover:opacity-100 transition-opacity">
                   hello@stmaryrotherhithe.com
                 </a>

@@ -11,7 +11,7 @@ import communityHeroImg from "@/assets/community-hero.webp";
 
 const HISTORY_IMG = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/shipping-in-the-pool-of-london.webp";
 
-const RECTOR_PHOTO = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/20180124_114315-1.webp";
+// const RECTOR_PHOTO = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/20180124_114315-1.webp";
 
 export default function Index() {
   return (
@@ -72,6 +72,11 @@ export default function Index() {
                 <p className="text-lg text-accent font-semibold mb-1">Parish Eucharist — Sundays at 10:00am</p>
                 <p className="text-muted-foreground italic mb-6">All welcome. Teas and coffees served after the service.</p>
 
+                <p className="text-foreground font-medium border-l-4 border-accent pl-4">
+                  Note that there is currently no Eucharist on weekdays until further notice.
+                </p>
+
+                {/*
                 <h3 className="font-serif text-xl font-semibold text-foreground mb-4">Weekday &amp; Weekend Services</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
@@ -109,6 +114,7 @@ export default function Index() {
                 <p className="text-sm text-muted-foreground mt-4 italic">
                   Benediction is usually on festivals and the first Sunday of the month.
                 </p>
+                */}
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img
@@ -122,10 +128,22 @@ export default function Index() {
         </div>
       </section>
 
-      {/* From the Rector */}
+      {/* From the diocese */}
       <section className="py-16 md:py-24">
         <div className="container">
           <ScrollReveal>
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif text-3xl font-semibold text-foreground mb-6">From the diocese</h2>
+              <div className="text-lg leading-relaxed text-muted-foreground border-l-4 border-accent pl-6 space-y-4">
+                <p>
+                  Following a concern received by the diocese Revd Canon Mark Nicholls has agreed to step back from his role. This is without prejudice and does not mean that any determination has been made. It is in order to allow us to investigate the matter.
+                </p>
+                <p>
+                  The concern does not relate to Revd Canon Mark Nicholls's current role at St Mary's. Please be assured that appropriate support is being offered to all those affected by this situation. Please keep them in your prayers.
+                </p>
+              </div>
+            </div>
+            {/*
             <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center max-w-4xl mx-auto">
               <div>
                 <h2 className="font-serif text-3xl font-semibold text-foreground mb-6">From the Rector</h2>
@@ -142,6 +160,7 @@ export default function Index() {
                 />
               </div>
             </div>
+            */}
           </ScrollReveal>
         </div>
       </section>
@@ -158,7 +177,7 @@ export default function Index() {
             <ScrollReveal delay={0}>
               <SubpageCard
                 title="Worship With Us"
-                synopsis="Sunday Parish Eucharist at 10am. Weekday services throughout the week. All are welcome."
+                synopsis="Sunday Parish Eucharist at 10am. All are welcome."
                 imageSrc={worshipTileImg}
                 href="/worship"
               />
@@ -200,7 +219,7 @@ export default function Index() {
               <strong className="text-foreground">St Mary's Church</strong>, Saint Marychurch St, London SE16 4HZ
             </p>
             <p className="text-muted-foreground mb-8">
-              Phone: 07909 546 659 · Email:{" "}
+              Phone: 07812 757 450 · Email:{" "}
               <a href="mailto:hello@stmaryrotherhithe.com" className="text-accent hover:underline">
                 hello@stmaryrotherhithe.com
               </a>

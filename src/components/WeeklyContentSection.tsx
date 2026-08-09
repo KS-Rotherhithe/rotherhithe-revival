@@ -1,16 +1,31 @@
-import { Download } from "lucide-react";
+import { Archive, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useWeeklyContent } from "@/hooks/useWeeklyContent";
 
+const ARCHIVE_URL = "https://mediaboard.stmaryrotherhithe.com";
+
+function ArchiveButton() {
+  return (
+    <Button asChild size="lg" className="gap-2">
+      <a href={ARCHIVE_URL} target="_blank" rel="noopener noreferrer">
+        <Archive className="h-4 w-4" aria-hidden="true" />
+        Pew sheet archive
+      </a>
+    </Button>
+  );
+}
+
 interface WeeklyContentSectionProps {
   showIntro?: boolean;
   id?: string;
+  showArchiveLink?: boolean;
 }
 
 export default function WeeklyContentSection({
   showIntro = true,
   id = "weekly-update",
+  showArchiveLink = false,
 }: WeeklyContentSectionProps) {
   const { content, loading, error } = useWeeklyContent();
 
@@ -86,18 +101,27 @@ export default function WeeklyContentSection({
             />
           )}
 
-          <Button asChild size="lg" className="gap-2">
-            <a
-              href={content.file_url}
-              download={content.file_name}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Download ${content.file_name}`}
-            >
-              <Download className="h-4 w-4" aria-hidden="true" />
-              Download pew sheet
-            </a>
-          </Button>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild size="lg" className="gap-2">
+              <a
+                href={content.file_url}
+                download={content.file_name}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Download ${content.file_name}`}
+              >
+                <Download className="h-4 w-4" aria-hidden="true" />
+                Download pew sheet
+              </a>
+            </Button>
+            {showArchiveLink && <ArchiveButton />}
+          </div>
+        </div>
+      )}
+
+      {showArchiveLink && !(!loading && !error && content) && (
+        <div className="mt-6 flex flex-wrap gap-3">
+          <ArchiveButton />
         </div>
       )}
     </section>
