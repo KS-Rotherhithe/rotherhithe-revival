@@ -142,6 +142,13 @@ export default function Index() {
                   The concern does not relate to Revd Canon Mark Nicholls's current role at St Mary's. Please be assured that appropriate support is being offered to all those affected by this situation. Please keep them in your prayers.
                 </p>
               </div>
+              <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
+                As the statement from the diocese explains, Fr Nicholls has stepped back from ministry for the time being. Please direct any enquiries about funerals, marriage, baptism or banns of marriage or any other enquiries to the churchwardens at{" "}
+                <a href="mailto:hello@stmaryrotherhithe.com" className="text-accent hover:underline">
+                  hello@stmaryrotherhithe.com
+                </a>{" "}
+                who will respond to you as soon as possible.
+              </p>
             </div>
             {/*
             <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center max-w-4xl mx-auto">
