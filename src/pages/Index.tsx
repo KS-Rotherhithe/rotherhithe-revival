@@ -128,22 +128,14 @@ export default function Index() {
         </div>
       </section>
 
-      {/* From the diocese */}
+      {/* From the PCC */}
       <section className="py-16 md:py-24">
         <div className="container">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto">
-              <h2 className="font-serif text-3xl font-semibold text-foreground mb-6">From the diocese</h2>
-              <div className="text-lg leading-relaxed text-muted-foreground border-l-4 border-accent pl-6 space-y-4">
-                <p>
-                  Following a concern received by the diocese Revd Canon Mark Nicholls has agreed to step back from his role. This is without prejudice and does not mean that any determination has been made. It is in order to allow us to investigate the matter.
-                </p>
-                <p>
-                  The concern does not relate to Revd Canon Mark Nicholls's current role at St Mary's. Please be assured that appropriate support is being offered to all those affected by this situation. Please keep them in your prayers.
-                </p>
-              </div>
-              <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-                As the statement from the diocese explains, Fr Nicholls has stepped back from ministry for the time being. Please direct any enquiries about funerals, marriage, baptism or banns of marriage or any other enquiries to the churchwardens at{" "}
+              <h2 className="font-serif text-3xl font-semibold text-foreground mb-6">From the PCC</h2>
+              <p className="text-lg leading-relaxed text-muted-foreground border-l-4 border-accent pl-6">
+                Fr Nicholls is currently unavailable - please direct any enquiries about funerals, marriage, baptism or banns of marriage or any other enquiries to the churchwardens at{" "}
                 <a href="mailto:hello@stmaryrotherhithe.com" className="text-accent hover:underline">
                   hello@stmaryrotherhithe.com
                 </a>{" "}
