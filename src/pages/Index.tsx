@@ -72,11 +72,6 @@ export default function Index() {
                 <p className="text-lg text-accent font-semibold mb-1">Parish Eucharist — Sundays at 10:00am</p>
                 <p className="text-muted-foreground italic mb-6">All welcome. Teas and coffees served after the service.</p>
 
-                <p className="text-foreground font-medium border-l-4 border-accent pl-4">
-                  Note that there is currently no Eucharist on weekdays until further notice.
-                </p>
-
-                {/*
                 <h3 className="font-serif text-xl font-semibold text-foreground mb-4">Weekday &amp; Weekend Services</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
@@ -98,15 +93,10 @@ export default function Index() {
                         <td className="py-3 pr-4">Sunday</td>
                         <td className="py-3">6:00pm</td>
                       </tr>
-                      <tr className="border-b border-border/50">
-                        <td className="py-3 pr-4">Eucharist</td>
-                        <td className="py-3 pr-4">Tue &amp; Thu</td>
-                        <td className="py-3">12:00 noon</td>
-                      </tr>
                       <tr>
                         <td className="py-3 pr-4">Eucharist</td>
-                        <td className="py-3 pr-4">Fri &amp; Sat</td>
-                        <td className="py-3">9:30am</td>
+                        <td className="py-3 pr-4">Tuesday</td>
+                        <td className="py-3">12:00 noon</td>
                       </tr>
                     </tbody>
                   </table>
@@ -114,7 +104,6 @@ export default function Index() {
                 <p className="text-sm text-muted-foreground mt-4 italic">
                   Benediction is usually on festivals and the first Sunday of the month.
                 </p>
-                */}
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img

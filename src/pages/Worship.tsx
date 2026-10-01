@@ -12,17 +12,6 @@ export default function Worship() {
         imageSrc={worshipImg}
       />
 
-      <section className="pt-16 md:pt-24">
-        <div className="container max-w-3xl">
-          <ScrollReveal>
-            <p className="text-foreground font-medium border-l-4 border-accent pl-4">
-              Note that there is currently no Eucharist on weekdays until further notice.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/*
       <section className="py-16 md:py-24">
         <div className="container max-w-3xl">
           <ScrollReveal>
@@ -47,15 +36,10 @@ export default function Worship() {
                     <td className="py-3 pr-4">Sunday</td>
                     <td className="py-3">6:00pm</td>
                   </tr>
-                  <tr className="border-b border-border/50">
-                    <td className="py-3 pr-4">Eucharist</td>
-                    <td className="py-3 pr-4">Tue &amp; Thu</td>
-                    <td className="py-3">12:00 noon</td>
-                  </tr>
                   <tr>
                     <td className="py-3 pr-4">Eucharist</td>
-                    <td className="py-3 pr-4">Fri &amp; Sat</td>
-                    <td className="py-3">9:30am</td>
+                    <td className="py-3 pr-4">Tuesday</td>
+                    <td className="py-3">12:00 noon</td>
                   </tr>
                 </tbody>
               </table>
@@ -66,7 +50,6 @@ export default function Worship() {
           </ScrollReveal>
         </div>
       </section>
-      */}
 
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container max-w-3xl">

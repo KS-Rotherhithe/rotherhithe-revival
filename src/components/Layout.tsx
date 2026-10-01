@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Facebook, Instagram, Menu, X } from "lucide-react";
+import { FACEBOOK_PAGE_URL, INSTAGRAM_PROFILE_URL } from "@/lib/social";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -15,12 +16,12 @@ const navItems = [
 const SOCIAL_LINKS = [
   {
     label: "Facebook",
-    href: "https://facebook.com/StMaryRotherhithe",
+    href: FACEBOOK_PAGE_URL,
     icon: Facebook,
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/stmaryrotherhithe/",
+    href: INSTAGRAM_PROFILE_URL,
     icon: Instagram,
   },
 ] as const;
@@ -102,9 +103,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <h4 className="font-serif text-base font-semibold mb-3">Services</h4>
               <p className="text-sm opacity-80 leading-relaxed">
                 Parish Eucharist — Sundays at 10:00am<br />
-                Evening Prayer — Sundays at 6:00pm
-                {/* <br />
-                Weekday Eucharist — see schedule */}
+                Evening Prayer — Sundays at 6:00pm<br />
+                Eucharist — Tuesdays at 12:00 noon
               </p>
             </div>
             <div>
