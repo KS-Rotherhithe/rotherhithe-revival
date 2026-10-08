@@ -195,7 +195,7 @@ export default function Index() {
               <strong className="text-foreground">St Mary's Church</strong>, Saint Marychurch St, London SE16 4HZ
             </p>
             <p className="text-muted-foreground mb-8">
-              Phone: 07812 757 450 · Email:{" "}
+              Phone: 07909 546 659 · Email:{" "}
               <a href="mailto:hello@stmaryrotherhithe.com" className="text-accent hover:underline">
                 hello@stmaryrotherhithe.com
               </a>

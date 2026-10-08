@@ -21,7 +21,7 @@ export default function Contact() {
                 <div className="space-y-4 text-muted-foreground">
                   <p>
                     <strong className="text-foreground">Phone:</strong><br />
-                    07812 757 450
+                    07909 546 659
                   </p>
                   <p>
                     <strong className="text-foreground">Email:</strong><br />
