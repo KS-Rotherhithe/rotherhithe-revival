@@ -11,7 +11,7 @@ import communityHeroImg from "@/assets/community-hero.webp";
 
 const HISTORY_IMG = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/shipping-in-the-pool-of-london.webp";
 
-// const RECTOR_PHOTO = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/20180124_114315-1.webp";
+const RECTOR_PHOTO = "https://stmaryrotherhithe.com/wp-content/uploads/2005/05/20180124_114315-1.webp";
 
 export default function Index() {
   return (
@@ -117,21 +117,10 @@ export default function Index() {
         </div>
       </section>
 
-      {/* From the PCC */}
+      {/* From the Rector */}
       <section className="py-16 md:py-24">
         <div className="container">
           <ScrollReveal>
-            <div className="max-w-3xl mx-auto">
-              <h2 className="font-serif text-3xl font-semibold text-foreground mb-6">From the PCC</h2>
-              <p className="text-lg leading-relaxed text-muted-foreground border-l-4 border-accent pl-6">
-                Fr Nicholls is currently unavailable - please direct any enquiries about funerals, marriage, baptism or banns of marriage or any other enquiries to the churchwardens at{" "}
-                <a href="mailto:hello@stmaryrotherhithe.com" className="text-accent hover:underline">
-                  hello@stmaryrotherhithe.com
-                </a>{" "}
-                who will respond to you as soon as possible.
-              </p>
-            </div>
-            {/*
             <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center max-w-4xl mx-auto">
               <div>
                 <h2 className="font-serif text-3xl font-semibold text-foreground mb-6">From the Rector</h2>
@@ -148,7 +137,6 @@ export default function Index() {
                 />
               </div>
             </div>
-            */}
           </ScrollReveal>
         </div>
       </section>

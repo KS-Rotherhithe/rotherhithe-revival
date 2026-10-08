@@ -98,9 +98,9 @@ export default function Worship() {
 
               <div className="bg-secondary rounded-lg p-6">
                 <p className="text-foreground font-medium">
-                  Contact: Churchwarden Ms Karyna Silina —{" "}
-                  <a href="mailto:hello@stmaryrotherhithe.com" className="text-accent hover:underline">
-                    hello@stmaryrotherhithe.com
+                  Contact: Rev Mark Nicholls —{" "}
+                  <a href="mailto:mmarini2001@aol.com" className="text-accent hover:underline">
+                    mmarini2001@aol.com
                   </a>
                 </p>
               </div>
